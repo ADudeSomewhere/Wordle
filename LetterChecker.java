@@ -2,7 +2,7 @@ import java.util.*;
 
 public class LetterChecker{
 	
-	private ArrayList<Character> wordWord; // zee word
+	private ArrayList<Character> wordWord; // zee wordWord
 	
 	public LetterChecker(ArrayList<Character> w) {
 		wordWord = w;
