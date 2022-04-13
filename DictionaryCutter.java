@@ -5,23 +5,23 @@ import java.util.Scanner;
 
 public class DictionaryCutter{
 	Scanner sc;
-	PrintStream FFDP;
+	PrintStream thatsalottadamage;
 	
 	public DictionaryCutter() throws FileNotFoundException{
 	sc=new Scanner(new File("dictionary.txt"));
-	FFDP= new PrintStream("WordleDictionary.txt");
+	thatsalottadamage= new PrintStream("WordleDictionary.txt");
 	String holder="";
 	
 	while(sc.hasNextLine()) {
 	holder=sc.nextLine();
 	if(holder.length()==5) {
-	FFDP.println(holder);}
+	thatsalottadamage.println(holder);}
 	}
 	}
 	
 	
 	@SuppressWarnings("unused")
 	public static void main(String[] args) throws FileNotFoundException  {
-		DictionaryCutter thatsalottadamage=new DictionaryCutter();}
+		DictionaryCutter howboutsomemore=new DictionaryCutter();}
 	
 }
