@@ -18,4 +18,24 @@ public class LetterChecker{
 		}
 		return pain; // {0, 1} 0 = is letter a part of wordWord, 1 = is letter's position in word the same as the letter's position in wordWord
 	}
+	public static void main( String args[] )
+	{
+		ArrayList<Character> e=new ArrayList<Character>();
+		e.add('A');
+		e.add('P');
+		e.add('P');
+		e.add('L');
+		e.add('E');
+		LetterChecker run = new LetterChecker(e);
+		System.out.println(run.check('B', 2)[0]+" "+run.check('B', 2)[1]);
+		System.out.println(run.check('A', 0)[0]+" "+run.check('A', 0)[1]);
+		System.out.println(run.check('A', 2)[0]+" "+run.check('A', 2)[1]);
+	}
 }
+
+//char[] ye=w.toCharArray();
+//int i=0;
+//while(wordWord.size()!=ye.length) {
+//	wordWord.add(ye[i]);
+//	i+=1;
+//}
