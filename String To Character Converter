@@ -1,7 +1,7 @@
   public ArrayList<Character> convert(String word){
 		ArrayList<Character> pain = new ArrayList<Character>();
 		for (int x = 0; x < word.length(); x++) {
-			pain.add(word.charAt(0));
+			pain.add(word.charAt(x));
 		}
 		return pain;
 	}
