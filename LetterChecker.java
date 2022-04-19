@@ -18,6 +18,13 @@ public class LetterChecker{
 		}
 		return pain; // {0, 1} 0 = is letter a part of wordWord, 1 = is letter's position in word the same as the letter's position in wordWord
 	}
+	 public ArrayList<Character> convert(String word){
+		ArrayList<Character> pain = new ArrayList<Character>();
+		for (int x = 0; x < word.length(); x++) {
+			pain.add(word.charAt(x));
+		}
+		return pain;
+	}
 	public static void main( String args[] )
 	{
 		ArrayList<Character> e=new ArrayList<Character>();
