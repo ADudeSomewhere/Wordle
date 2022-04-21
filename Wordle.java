@@ -18,6 +18,13 @@ public class Wordle{
 		System.out.print("\nPrint your word, plebian:");
 		
 		String word = kb.next();
+		
+		while(word.length()!=5&&bill.isWord(word)==false) {
+			System.out.print("Try again, fool:");
+			word = kb.next();
+		}
+		System.out.print(word);
+
 		/* do string to character converter
 		 * 
 		 * then die (irl)
