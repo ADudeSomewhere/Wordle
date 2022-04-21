@@ -4,5 +4,6 @@ Things to be done
 - Random Word Generator
 - Input 
 - Game
+- Check if word exist
 
 Need to be divided further.
