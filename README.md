@@ -1,8 +1,8 @@
 Things to be done
 - Letter Checker (done)
-- Dictionary File of 5 letter words
+- Dictionary File of 5 letter words(done)
 - Random Word Generator
-- Input (waiting for web kids)
+- Input 
 - Game
 
 Need to be divided further.
