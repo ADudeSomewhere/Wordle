@@ -30,8 +30,15 @@ public class Wordle{
 		 * then die (irl)
 		 * 
 		 * then check the letters to the actual word
-		 * 
-		 * and print out things for correct guess and whatnot
+		 */
+		
+		String realWord = "_____";
+		String keyboard = "q w e r t y u i o p\n"
+				+ " a s d f g h j k l\n"
+				+ "  z x c v b n m\n";
+		
+		
+		/* and print out things for correct guess and whatnot
 		 * 
 		 * then die (again)
 		 * 
