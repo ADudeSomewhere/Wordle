@@ -19,7 +19,7 @@ public class Wordle{
 		
 		String word = kb.next();
 		
-		while(word.length()!=5&&bill.isWord(word)==false) {
+		while(word.length()!=5||bill.isWord(word)==false) {
 			System.out.print("Try again, fool:");
 			word = kb.next();
 		}
