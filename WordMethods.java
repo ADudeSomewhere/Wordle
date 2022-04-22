@@ -25,6 +25,20 @@ public class WordMethods{
 			}
 			return pain;
 		}
+	public boolean isWord(String a) {
+		 a=a.toLowerCase();
+		 boolean hasit=false;
+		 String d="";
+		 while(!a.equals(d)&&dict.hasNext()) {
+			 d=dict.next();
+			 if(a.equals(d)) {
+				 hasit=true;
+				 break;
+			 	} 
+		 	}
+		 try {dict=new Scanner(new File("WordleDictionary.txt"));} catch (FileNotFoundException e) {e.printStackTrace();}
+		 return hasit;
+	 	}
 	public static void main( String args[] )
 	{
 		ArrayList<Character> e=new ArrayList<Character>();
@@ -37,6 +51,8 @@ public class WordMethods{
 		System.out.println(run.check('B', 2)[0]+" "+run.check('B', 2)[1]);
 		System.out.println(run.check('A', 0)[0]+" "+run.check('A', 0)[1]);
 		System.out.println(run.check('A', 2)[0]+" "+run.check('A', 2)[1]);
+		System.out.println("is browg a word?"+run.isWord("browg"));
+		System.out.println("is brown a word?"+run.isWord("brown"));
 	}
 }
 
