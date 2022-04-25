@@ -2,6 +2,11 @@ import java.util.*;
 
 public class Wordle{
 	public static void main(String args[]) {
+		String closeWord = "_____";
+		String keyboard = "q w e r t y u i o p\n"
+				+ " a s d f g h j k l\n"
+				+ "  z x c v b n m\n";
+		
 		Scanner kb = new Scanner(System.in);
 		
 		/* get zee random ward somehow
@@ -23,22 +28,16 @@ public class Wordle{
 			System.out.print("Try again, fool:");
 			word = kb.next();
 		}
-		System.out.print(word);
-
-		/* do string to character converter
-		 * 
-		 * then die (irl)
-		 * 
-		 * then check the letters to the actual word
-		 */
+		//System.out.print(word);
 		
-		String realWord = "_____";
-		String keyboard = "q w e r t y u i o p\n"
-				+ " a s d f g h j k l\n"
-				+ "  z x c v b n m\n";
+		ArrayList<Character> guess = new ArrayList<Character>();
+		guess = bill.convert(word);
 		
+		// remember, closeWord and keyboard is string.
 		
-		/* and print out things for correct guess and whatnot
+		/* then check the letters to the actual word
+		 *
+		 * and print out things for correct guess and whatnot
 		 * 
 		 * then die (again)
 		 * 
