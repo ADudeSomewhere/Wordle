@@ -4,9 +4,9 @@ public class Wordle{
 	public static void main(String args[]) {
 		Scanner kb = new Scanner(System.in);
 		
-		/* get zee random numbar somehow
+		/* get zee random ward somehow
 		 * 
-		 * put zee number in va variable
+		 * put zee ward in va variable
 		 */
 		
 		System.out.println("It is time to play a game, a game which we call wordle\n"
