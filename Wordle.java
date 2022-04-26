@@ -35,10 +35,26 @@ public class Wordle{
 		
 		// remember, closeWord and keyboard is string.
 		
-		/* then check the letters to the actual word
-		 *
-		 * and print out things for correct guess and whatnot
-		 * 
+		for (int x = 0; x < 5; x++) {
+			ArrayList<Boolean> stat = new ArrayList<Boolean>();
+			char let = guess.get(x);
+			stat = bill.check(let);
+			if (stat.get(0)) {
+				if (keyboard.indexOf(let) != -1) {
+					keyboard = keyboard.substring(0,keyboard.indexOf(let)) + (let - 32) + keyboard.substring(keyboard.indexOf(let)+1);
+				}
+			}
+			else if (!stat.get(0)) {
+				if (keyboard.indexOf(let) != -1) {
+					keyboard = keyboard.substring(0,keyboard.indexOf(let)) + "_" + keyboard.substring(keyboard.indexOf(let)+1);
+				}
+			}
+			if (stat.get(1)) {
+				closeWord = closeWord.substring(0,x) + let + closeWord.substring(x+1);
+			}
+		}
+		
+		/*
 		 * then die (again)
 		 * 
 		 * then loop this hell that we are in
