@@ -25,16 +25,16 @@ public class WordMethods{
 			}
 			return pain;
 		}
-	public boolean isWord(String a) {
+	 public boolean isWord(String a) {
 		 a=a.toLowerCase();
 		 boolean hasit=false;
 		 String d="";
-		 while(!a.equals(d)&&dict.hasNext()) {
-			 d=dict.next();
+		 while(dict.hasNext()) {
 			 if(a.equals(d)) {
 				 hasit=true;
 				 break;
 			 	} 
+			 d=dict.next();
 		 	}
 		 try {dict=new Scanner(new File("WordleDictionary.txt"));} catch (FileNotFoundException e) {e.printStackTrace();}
 		 return hasit;
