@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class WordMethods{
 	
 	private ArrayList<Character> wordWord; // zee wordWord
-	
+	private Scanner dict;
 	public WordMethods(ArrayList<Character> w) {
 		wordWord = w;
 	}
