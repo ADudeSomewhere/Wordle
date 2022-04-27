@@ -1,11 +1,16 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class WordMethods{
 	
 	private ArrayList<Character> wordWord; // zee wordWord
 	private Scanner dict;
-	public WordMethods(ArrayList<Character> w) {
-		wordWord = w;
+	public WordMethods(String s) {
+		s=s.toLowerCase();
+		wordWord = convert(s);
+		try {dict=new Scanner(new File("WordleDictionary.txt"));} catch (FileNotFoundException e) {e.printStackTrace();}
 	}
 	
 	public boolean[] check(char let, int pos) { // let = letter to check, pos = position of letter in word
@@ -19,6 +24,7 @@ public class WordMethods{
 		return pain; // {0, 1} 0 = is letter a part of wordWord, 1 = is letter's position in word the same as the letter's position in wordWord
 	}
 	 public ArrayList<Character> convert(String word){
+		 	word=word.toLowerCase();
 			ArrayList<Character> pain = new ArrayList<Character>();
 			for (int x = 0; x < word.length(); x++) {
 				pain.add(word.charAt(x));
@@ -47,12 +53,14 @@ public class WordMethods{
 		e.add('P');
 		e.add('L');
 		e.add('E');
-		WordMethods run = new WordMethods(e);
-		System.out.println(run.check('B', 2)[0]+" "+run.check('B', 2)[1]);
-		System.out.println(run.check('A', 0)[0]+" "+run.check('A', 0)[1]);
-		System.out.println(run.check('A', 2)[0]+" "+run.check('A', 2)[1]);
+		WordMethods run = new WordMethods("BROWN");
+		System.out.println(run.check('b', 2)[0]+" "+run.check('b', 2)[1]);
+		System.out.println(run.check('b', 0)[0]+" "+run.check('b', 0)[1]);
+		System.out.println(run.check('a', 0)[0]+" "+run.check('a', 0)[1]);
+		System.out.println(run.check('a', 2)[0]+" "+run.check('a', 2)[1]);
 		System.out.println("is browg a word?"+run.isWord("browg"));
 		System.out.println("is brown a word?"+run.isWord("brown"));
+		
 	}
 }
 
