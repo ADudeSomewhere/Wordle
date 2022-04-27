@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class WordMethods{
 	
 	private ArrayList<Character> wordWord; // zee wordWord
-	private Scanner dict;
+	private static Scanner dict;
 	public WordMethods(String s) {
 		s=s.toLowerCase();
 		wordWord = convert(s);
@@ -45,6 +45,18 @@ public class WordMethods{
 		 try {dict=new Scanner(new File("WordleDictionary.txt"));} catch (FileNotFoundException e) {e.printStackTrace();}
 		 return hasit;
 	 	}
+	 public String getWord() {
+		 int numpick=(int) ((Math.random()*8548)+1);
+		 String a="";
+		 for (int i=1;i<=8548&&i<=numpick;i++) {
+			 a=dict.next();
+			 if(numpick==i) {
+				 break;
+			 }
+		 }
+		 return a;
+	 }
+	 
 	public static void main( String args[] )
 	{
 		ArrayList<Character> e=new ArrayList<Character>();
@@ -60,6 +72,8 @@ public class WordMethods{
 		System.out.println(run.check('a', 2)[0]+" "+run.check('a', 2)[1]);
 		System.out.println("is browg a word?"+run.isWord("browg"));
 		System.out.println("is brown a word?"+run.isWord("brown"));
+		System.out.println(run.getWord());
+
 		
 	}
 }
