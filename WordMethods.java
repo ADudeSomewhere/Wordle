@@ -12,6 +12,10 @@ public class WordMethods{
 		wordWord = convert(s);
 		try {dict=new Scanner(new File("WordleDictionary.txt"));} catch (FileNotFoundException e) {e.printStackTrace();}
 	}
+	public WordMethods() {
+		wordWord = convert(getWord());
+		try {dict=new Scanner(new File("WordleDictionary.txt"));} catch (FileNotFoundException e) {e.printStackTrace();}
+	}
 	
 	public boolean[] check(char let, int pos) { // let = letter to check, pos = position of letter in word
 		boolean[] pain = {false, false};
@@ -78,9 +82,3 @@ public class WordMethods{
 	}
 }
 
-//char[] ye=w.toCharArray();
-//int i=0;
-//while(wordWord.size()!=ye.length) {
-//	wordWord.add(ye[i]);
-//	i+=1;
-//}
