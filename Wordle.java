@@ -8,7 +8,8 @@ public class Wordle{
 				+ "  z x c v b n m\n";
 		
 		Scanner kb = new Scanner(System.in);
-		
+		WordMethods bill= new WordMethods("apple");
+
 		/* get zee random ward somehow
 		 * 
 		 * put zee ward in va variable
