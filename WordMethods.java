@@ -21,7 +21,7 @@ public class WordMethods{
 		boolean[] pain = {false, false};
 		if (wordWord.indexOf(let) != -1) {
 			pain[0] = true;
-			if (wordWord.indexOf(let) == pos) {
+			if (wordWord.get(pos) == let) {
 				pain[1] = true;
 			}  // error: double letters don't work
 		}
