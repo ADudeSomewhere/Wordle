@@ -5,7 +5,7 @@ public class Wordle{
 		String closeWord = "_____";
 		String keyboard = "q w e r t y u i o p\n"
 				+ " a s d f g h j k l\n"
-				+ "  z x c v b n m\n";
+				+ "  z x c v b n m";
 		
 		Scanner kb = new Scanner(System.in);
 		WordMethods bill= new WordMethods("apple");
