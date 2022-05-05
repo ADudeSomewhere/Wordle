@@ -8,7 +8,7 @@ public class Wordle{
 				+ "  z x c v b n m\n";
 		
 		Scanner kb = new Scanner(System.in);
-		WordMethods bill= new WordMethods();
+		WordMethods bill= new WordMethods("apple");
 
 		/* get zee random ward somehow
 		 * 
@@ -21,38 +21,44 @@ public class Wordle{
 				+ "We will also tell you if the letters are in the correct place\n"
 				+ "Good luck. We'll see if you make it.");
 		
-		System.out.print("\nPrint your word, plebian:");
-		
-		String word = kb.next();
-		
-		while(word.length()!=5||bill.isWord(word)==false) {
-			System.out.print("Try again, fool:");
-			word = kb.next();
-		}
-		//System.out.print(word);
-		
-		ArrayList<Character> guess = new ArrayList<Character>();
-		guess = bill.convert(word);
-		
-		// remember, closeWord and keyboard is string.
-		
-		for (int x = 0; x < 5; x++) {
-			boolean[] stat = null;
-			char let = guess.get(x);
-			stat = bill.check(let, x);
-			if (stat[0]) {
-				if (keyboard.indexOf(let) != -1) {
-					keyboard = keyboard.substring(0,keyboard.indexOf(let)) + (let - 32) + keyboard.substring(keyboard.indexOf(let)+1);
+		for (int t = 0; t < 6; t++) {
+			System.out.print("\nPrint your word, plebian:");
+			
+			String word = kb.next();
+			
+			while(word.length()!=5||bill.isWord(word)==false) {
+				System.out.print("Try again, fool:");
+				word = kb.next();
+			}
+			//System.out.print(word);
+			
+			ArrayList<Character> guess = new ArrayList<Character>();
+			guess = bill.convert(word);
+			
+			// remember, closeWord and keyboard is string.
+			
+			for (int x = 0; x < 5; x++) {
+				boolean[] stat = null;
+				char let = guess.get(x);
+				stat = bill.check(let, x);
+				if (stat[0]) {
+					if (keyboard.indexOf(let) != -1) {
+						keyboard = keyboard.substring(0,keyboard.indexOf(let)) + ((char)(let - 32)) + keyboard.substring(keyboard.indexOf(let)+1);
+					}
+				}
+				else if (!stat[0]) {
+					if (keyboard.indexOf(let) != -1) {
+						keyboard = keyboard.substring(0,keyboard.indexOf(let)) + "_" + keyboard.substring(keyboard.indexOf(let)+1);
+					}
+				}
+				if (stat[1]) {
+					closeWord = closeWord.substring(0,x) + let + closeWord.substring(x+1);
 				}
 			}
-			else if (!stat[0]) {
-				if (keyboard.indexOf(let) != -1) {
-					keyboard = keyboard.substring(0,keyboard.indexOf(let)) + "_" + keyboard.substring(keyboard.indexOf(let)+1);
-				}
-			}
-			if (stat[1]) {
-				closeWord = closeWord.substring(0,x) + let + closeWord.substring(x+1);
-			}
+			
+			System.out.println();
+			System.out.println(closeWord);
+			System.out.println(keyboard);
 		}
 		
 		/*
