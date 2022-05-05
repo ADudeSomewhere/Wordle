@@ -13,8 +13,8 @@ public class WordMethods{
 		try {dict=new Scanner(new File("WordleDictionary.txt"));} catch (FileNotFoundException e) {e.printStackTrace();}
 	}
 	public WordMethods() {
-		wordWord = convert(getWord());
 		try {dict=new Scanner(new File("WordleDictionary.txt"));} catch (FileNotFoundException e) {e.printStackTrace();}
+		wordWord = convert(getWord());
 	}
 	
 	public boolean[] check(char let, int pos) { // let = letter to check, pos = position of letter in word
@@ -23,7 +23,7 @@ public class WordMethods{
 			pain[0] = true;
 			if (wordWord.indexOf(let) == pos) {
 				pain[1] = true;
-			}
+			}  // error: double letters don't work
 		}
 		return pain; // {0, 1} 0 = is letter a part of wordWord, 1 = is letter's position in word the same as the letter's position in wordWord
 	}
@@ -81,4 +81,3 @@ public class WordMethods{
 		
 	}
 }
-
